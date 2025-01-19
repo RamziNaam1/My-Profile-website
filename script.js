@@ -1,3 +1,4 @@
+
 new Typed('#type-it', {
         strings: ['Web Developer', 'Mobile Developer', 'Freelancer'],
         typeSpeed: 100,
@@ -41,7 +42,7 @@ window.addEventListener('scroll', function () {
 
 
 
-emailjs.init("_8ksd7otem1E6G1dY"); 
+emailjs.init('_8ksd7otem1E6G1dY'); 
 
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault(); 
@@ -53,7 +54,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
 
     console.log({ from_name: name, from_email: email, subject: subject, message: message });
 
-    emailjs.send("service_c8xwqmw", "template_oznd4mu", {
+    emailjs.send('service_c8xwqmw', 'template_oznd4mu', {
         from_name: name,
         from_email: email,
         subject: subject,
@@ -67,6 +68,8 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         alert("Failed to send message. Please try again.");
     });
 });
+
+
 document.getElementById('expandProjectsBtn').addEventListener('click', function () {
     const hiddenProjects = document.querySelector('.hidden-projects');
     const arrowIcon = document.getElementById('arrowIcon');
@@ -84,3 +87,61 @@ document.getElementById('expandProjectsBtn').addEventListener('click', function 
         btn.prepend(arrowIcon); 
     }
 });
+
+
+const contactForm = document.getElementById('contactForm');
+const nameInput = contactForm.elements['name'];
+const emailInput = contactForm.elements['email'];
+const subjectInput = contactForm.elements['subject'];
+const messageInput = contactForm.elements['message'];
+const statusMessage = document.getElementById('statusMessage');
+const errorMessage = document.getElementById('errorMessage');
+
+
+const isValidName = (name) => /^[a-zA-Z\s]+$/.test(name);
+const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    
+ 
+    statusMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+   
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const subject = subjectInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (!isValidName(name)) {
+        alert('Name should only contain letters and spaces.');
+        nameInput.focus();
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        alert('Please enter a valid email address.');
+        emailInput.focus();
+        return;
+    }
+    
+    if (subject.length === 0) {
+        alert('Subject is required.');
+        subjectInput.focus();
+        return;
+    }
+
+    if (message.length === 0) {
+        alert('Message is required.');
+        messageInput.focus();
+        return;
+    }
+
+    
+    statusMessage.style.display = 'block';
+    contactForm.reset(); 
+});
+
+

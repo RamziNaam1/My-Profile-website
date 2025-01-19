@@ -8,7 +8,7 @@ body {
     font-family: "Jost", sans-serif;
     font-weight: 400;
     color: #fff; 
-    background-color: #000; 
+    background-color: rgb(59, 54, 120); 
 }
 
 img {
@@ -55,6 +55,7 @@ a:hover {
 
 .main-header .navbar-nav > li {
     padding: 0 10px;
+    
 }
 
 .main-header .navbar-nav > li > .nav-link {
@@ -79,7 +80,9 @@ a:hover {
     background: #ff651c;
     transition: ease all 0.3s;
 }
-
+.nav-link {
+    color: white !important;
+}
 .main-header .navbar-nav > li > .nav-link:hover {
     color: #cfcfcf !important;
 }
@@ -87,7 +90,7 @@ a:hover {
 
   
 .main-header .navbar.scrolled {
-    background-color: #edc89a;
+    background-color: rgb(39, 36, 79);
     opacity: 0.85;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
@@ -95,7 +98,7 @@ a:hover {
 
   
 .main-header .navbar.scrolled .nav-link {
-    color: #130e0e; 
+    color: rgb(59, 54, 120); 
   }
   
 .main-header .navbar .navbar-brand h4 {
@@ -395,20 +398,23 @@ main {
 .contact-form{
     border: 2px solid #373737;
     padding: 35px;
-    background: #fff;
+    background: rgb(26, 24, 54);
+    border-radius: 20px;
 
 }
 .contact-form .lead{
     font-weight: 400;
     font-size: 18px;
     margin: 0 0 30px;
-    color: #000;
+    color: rgb(39, 232, 232);
 }
 .contact-form .form-control{
-    border-radius: 0 ;
+    border-radius: 10px;
     border: 1px solid #373737;
     box-shadow: none;
     padding: 0.575rem .75rem;
+    background-color: #7e7676;
+    color: #fff;
 }
 
 .contact-infos {
@@ -456,7 +462,7 @@ main {
 
 /*footer*/
 .footer{
-    background-color:rgba(231, 241, 251, 0.455);
+    background-color:rgba(77, 72, 158, 0.455);
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -477,3 +483,14 @@ main {
 .footer .nav a + a{
     margin-left: 10px;
 }
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 32px;
+    height: 32px;
+}
+
